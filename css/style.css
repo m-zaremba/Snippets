@@ -85,6 +85,27 @@ nav {
     margin: 0;
 }
 
+/* --------------- SIMPLE TABS --------------- */
+
+.tabs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tabs li {
+    display: inline-block;
+}
+
+.tabs .selected {
+    background-color: aquamarine;
+}
+
+.tabs div {
+    display: none;
+}
+
+/* --------------- PARALLAX --------------- */
+
 .scene {
     display: block;
     position: relative;
@@ -95,8 +116,6 @@ nav {
     overflow: hidden;
 }
 
-/* --------------- PARALLAX --------------- */
-
 .scene .element {
     display: block;
     position: absolute;
@@ -105,4 +124,39 @@ nav {
     border: black 1px solid;
     border-radius: 5px;
     background-color: #34c2e3;
+}
+
+/* --------------- CONTACT FORM --------------- */
+
+#contactForm {
+  width: 505px;
+  margin: 20px auto;
+}
+
+/* #contactForm textarea {
+  text-align: right;
+} */
+#contactForm input,
+#contactForm textarea {
+  width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5em;
+  font-family: Arial, sans-serif;
+  margin-top: 5px;
+}
+
+#contactForm label {
+  display: inline-block;
+  width: 150px;
+  margin-top: 20px;
+}
+
+.error {
+  width: 260px;
+  margin-top: 25px;
+}
+
+.marked {
+  border-color: red !important;
 }
