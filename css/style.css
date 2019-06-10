@@ -151,7 +151,7 @@ nav {
 
 /* --------------- CONTACT FORM --------------- */
 
-.contact-form {
+/* .contact-form {
   height: auto;
 }
 
@@ -183,4 +183,8 @@ nav {
 
 .marked {
   border-color: red !important;
+} */
+
+.test {
+  height: 400px;
 }

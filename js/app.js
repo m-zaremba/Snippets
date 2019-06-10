@@ -1,5 +1,11 @@
 $(function() {
 
+  var scene = $('.scene');
+  var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      scene.css('display', 'none');
+    }
+
 /* --------------- STICKY NAV BAR --------------- */
 
   const nav = $('nav');
