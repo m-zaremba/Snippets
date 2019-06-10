@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* --------------- NAVIGATION --------------- */
+
+nav {
+    height: 50px;
+    margin: 10px 0;
+}
+
+.menu {
+    background-color: aqua;
+    list-style: none;
+    padding: 0;
+    height: 50px;
+    z-index: 2;
+    width: 100%;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* --------------- INFINITE SLIDER --------------- */
+
+.slider-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.slider{
+  height: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+
+.slider ul{
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+
+.slider li{
+  display: inline-block;
+}
+
+#nextPicture {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  height: 90%;
+}
+
+#prevPicture {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  height: 90%;
+}
+
+/* --------------- ACCORDION --------------- */
+
+.QA h1 {
+    margin: 0;
+    padding: 15px;
+}
+
+.QA p {
+    display: none;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.scene {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border: black 1px solid;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* --------------- PARALLAX --------------- */
+
+.scene .element {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: black 1px solid;
+    border-radius: 5px;
+    background-color: #34c2e3;
+}
