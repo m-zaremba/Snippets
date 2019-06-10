@@ -64,7 +64,7 @@ $(function() {
 
 /* --------------- ACCORDION --------------- */
 
-  const questions = $('h1');
+  const questions = $('h3');
   const answers = $('p');
 
   questions.on('click', function(e){
@@ -99,6 +99,11 @@ function parallaxEffect() {
     var elements = $('.element');
     var oldMousePositionX = 0;
     var oldMousePositionY = 0;
+
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      scene.css('display', 'none');
+    }
 
 
     elements.each(function(i, e) {
