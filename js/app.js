@@ -10,21 +10,21 @@ $(function() {
 
   const nav = $('nav');
   const menu = $('.menu');
-  let menuPos = menu.offset().top;
+  let navPos = nav.offset().top;
 
   $(window).on('scroll', function() {
-    if ($(window).scrollTop() > menuPos) {
-      menu.addClass('sticky');
+    if ($(window).scrollTop() > navPos) {
+      nav.addClass('sticky');
     } else {
-      menu.removeClass('sticky');
+      nav.removeClass('sticky');
     }
   });
 
   $(window).on('resize', function() {
-    if (menu.hasClass('sticky')) {
-      menuPos = menu.offset().top;
+    if (nav.hasClass('sticky')) {
+      navPos = nav.offset().top;
     } else {
-      menuPos = nav.offset().top;
+      navPos = nav.offset().top;
     }
   })
 

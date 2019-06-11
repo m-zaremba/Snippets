@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -8,46 +8,65 @@ html,
 body {
     width: 100%;
     height: auto;
-    margin: 0;
-    padding: 0;
 }
 
 h1 {
+  color: white;
   text-align: center;
-  font-size: 40px;
+  font-size: 2rem;
   text-transform: uppercase;
 }
+
+header {
+  width: 100%;
+  text-align: center;
+  background-color: black;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 10px 10px;
+}
+
 
 
 /* --------------- NAVIGATION --------------- */
 
 nav {
     height: 50px;
-    margin: 10px 0;
+    background-color: rgb(107, 27, 196);
+}
+
+nav .container {
+  padding: 0 10px;
 }
 
 .menu {
-    background-color: aqua;
     list-style: none;
     padding: 0;
     height: 50px;
-    z-index: 2;
-    width: 100%;
+    z-index: 5;
 }
 
 .menu li {
     display: inline-block;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding-top: 15px;
+    padding-right: 10px;
 }
 
 .sticky {
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
 }
 
 /* --------------- INFINITE SLIDER --------------- */
 
-.slider-section {
+/* .slider-section {
   height: auto;
   display: flex;
   justify-content: center;
@@ -85,11 +104,11 @@ nav {
   left: 0;
   transform: translate(0, -50%);
   height: 90%;
-}
+} */
 
 /* --------------- ACCORDION --------------- */
 
-.accordion {
+/* .accordion {
   height: auto;
 }
 
@@ -102,11 +121,11 @@ nav {
     display: none;
     padding-left: 15px;
     margin: 0;
-}
+} */
 
 /* --------------- SIMPLE TABS --------------- */
 
-.tabs-section {
+/* .tabs-section {
   height: auto;
 }
 
@@ -125,11 +144,11 @@ nav {
 
 .tabs div {
     display: none;
-}
+} */
 
 /* --------------- PARALLAX --------------- */
 
-.scene {
+/* .scene {
     display: block;
     position: relative;
 
@@ -147,7 +166,7 @@ nav {
     border: black 1px solid;
     border-radius: 5px;
     background-color: #34c2e3;
-}
+} */
 
 /* --------------- CONTACT FORM --------------- */
 
@@ -186,5 +205,21 @@ nav {
 } */
 
 .test {
-  height: 400px;
+  height: 2000px;
+  background-image: linear-gradient(red, yellow);
 }
+
+@media only screen and (min-width: 768px) {
+    h1 {
+      font-size: 6rem;
+    }
+
+    .menu li {
+
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        padding-top: 10px;
+        padding-right: 3%;
+    }
+
+  }
