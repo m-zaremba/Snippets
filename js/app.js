@@ -283,6 +283,103 @@ for (var i = 0; i < tooltips.length; i++) {
   // }
 }
 
+/* --------------- CSS SPRITE ANIMATION --------------- */
+
+  var time = null;
+
+   function start () {
+     time = setInterval(function () {
+
+       /* Wersja z w pełni losową odległością zombie od dołu ekranu (bottom), losowym rozmyciem (blur) i wielkością (scale) */
+
+       // var bottom = Math.floor(Math.random() * 200) + -80;
+       // var scale = Math.floor(Math.random() * 2) + 7;
+       // var blur = Math.floor(Math.random() * 3);
+
+
+       /* Wersja uwzględniająca wielkość i oddalenie zombie wobec perspektywy patrzącego (uwzględnienie wartości z-index) + głębia ostrości */
+
+       var walkSpeed = Math.floor(Math.random() * 24) + 8;
+       var bottomArray = [0, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+       var randomBottom = bottomArray[Math.floor(Math.random() * bottomArray.length)];
+
+       var blur = null;
+       var scale = null;
+       var order = null;
+
+       if (randomBottom === 0) {
+         blur = 1.5;
+         scale = 1.5;
+         order = 10;
+       } else if (randomBottom === 20) {
+         blur = 1;
+         scale = 1;
+         order = 9;
+       } else if (randomBottom === 30) {
+         blur = .2;
+         scale = .9;
+         order = 8;
+       } else if (randomBottom === 40) {
+         blur = .3;
+         scale = .8;
+         order = 7;
+       } else if (randomBottom === 50) {
+         blur = .5;
+         scale = .75;
+         order = 6;
+       } else if (randomBottom === 60) {
+         blur = .6;
+         scale = .7;
+         order = 5;
+       } else if (randomBottom === 70) {
+         blur = .7;
+         scale = .6;
+         order = 4;
+       } else if (randomBottom === 80) {
+         blur = .8;
+         scale = .55;
+         order = 3;
+       } else if (randomBottom === 90) {
+         blur = .9;
+         scale = .5;
+         order = 2;
+       } else {
+         blur = 1;
+         scale = .4;
+         order = 1;
+       }
+
+       var zombie = document.createElement('div');
+       zombie.classList.add('zombie');
+       zombie.style.bottom = randomBottom +'px';
+       zombie.style.transform = 'scale(' + scale + ')';
+       zombie.style.filter = 'blur(' + blur + 'px)';
+       zombie.style.zIndex = order.toString();
+       zombie.style.animationDuration = '400ms, ' + walkSpeed + 's';
+
+       zombie.addEventListener("animationend", function() {
+         this.parentElement.removeChild(this);
+       });
+
+       var board = document.querySelector('.board');
+       board.appendChild(zombie);
+
+     }, 500);
+   }
+
+   var startButton = document.querySelector('.start-sprite');
+   var stopButton = document.querySelector('.stop-sprite');
+
+   startButton.addEventListener('click', function () {
+      start();
+   });
+
+   stopButton.addEventListener('click', function () {
+
+      clearInterval(time);
+      time = null;
+   })
+
 
 /* --------------- CONTACT FORM --------------- */
 

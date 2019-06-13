@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'bloodynormal';
+    src: url('../fonts/BLOODY-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   margin: 0 auto;
@@ -307,6 +314,79 @@ nav .container {
     z-index: 1;
 }
 
+/* --------------- CSS SPRITE ANIMATION --------------- */
+
+.css-sprite .container {
+  padding: 10px 0;
+}
+
+.css-sprite span {
+  font-family: 'bloodynormal';
+  display: block;
+  font-size: 3em;
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(0, 189, 0);
+  font-weight: bolder;
+}
+
+.zombie {
+    width: 200px;
+    height: 312px;
+    background: url('../images/walkingdead.png') left center;
+    position: absolute;
+    left: 100%;
+    bottom: 100px;
+    animation: zombie-animation 380ms steps(10) infinite, zombie-move 10s;
+}
+
+.board {
+    height:100vh;
+    min-height: 800px;
+    position: relative;
+    overflow: hidden;
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/board-bg.jpg);
+}
+
+.start-sprite,
+.stop-sprite {
+  position: absolute;
+  bottom: 1em;
+  color: green;
+  background-color: rgba(255, 255, 255, .1);
+  border: none;
+  border-radius: 5%;
+  padding: 5px 10px;
+  z-index: 99;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.start-sprite {
+  left: 1em;
+}
+
+.stop-sprite {
+  right: 1em;
+}
+
+@keyframes zombie-animation {
+
+    100% {
+        background-position: -2000px;
+    }
+}
+
+@keyframes zombie-move {
+    100% {
+        left: -300px;
+    }
+}
+
 
 /* --------------- CONTACT FORM --------------- */
 
@@ -378,6 +458,14 @@ nav .container {
 
     .slider button:hover {
       text-shadow: 0 0 8px #000;
+    }
+
+    .css-sprite .container {
+      padding: 10px 10px;
+    }
+
+    .css-sprite span {
+      font-size: 6em;
     }
 
   }
