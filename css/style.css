@@ -35,6 +35,10 @@ header {
 
 nav {
     height: 50px;
+}
+
+.navigation {
+    height: 50px;
     background-color: rgb(107, 27, 196);
 }
 
@@ -46,7 +50,6 @@ nav .container {
     list-style: none;
     padding: 0;
     height: 50px;
-    z-index: 5;
 }
 
 .menu li {
@@ -62,6 +65,7 @@ nav .container {
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 100;
 }
 
 /* --------------- INFINITE SLIDER --------------- */

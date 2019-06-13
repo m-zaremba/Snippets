@@ -8,8 +8,7 @@ $(function() {
 
 /* --------------- STICKY NAV BAR --------------- */
 
-  const nav = $('nav');
-  const menu = $('.menu');
+  const nav = $('.navigation');
   let navPos = nav.offset().top;
 
   $(window).on('scroll', function() {
