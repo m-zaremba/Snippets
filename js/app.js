@@ -181,16 +181,20 @@ $(function() {
 
 /* --------------- PARALLAX --------------- */
 
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
 function parallaxEffect() {
 
     var scene = $('.scene');
+    var mobileInfo = $('.mobile-info');
     var elements = $('.element');
     var oldMousePositionX = 0;
     var oldMousePositionY = 0;
 
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
     if (isMobile) {
       scene.css('display', 'none');
+      mobileInfo.css('display', 'block');
     }
 
 
@@ -216,7 +220,7 @@ function parallaxEffect() {
         var currentMousePositionY = $(e).css('top');
       })
 
-      if ($(event.target).is('.element')) {
+      if ($(event.target).is('.element') || $(event.target).is('.text')) {
         currentMousePositionX += parseFloat($(event.target).css("left"));
         currentMousePositionY += parseFloat($(event.target).css("top"));
       }
@@ -234,6 +238,51 @@ function parallaxEffect() {
   }
 
   parallaxEffect();
+
+
+/* --------------- TOOLTIP --------------- */
+
+var tooltips = document.querySelectorAll('.tooltip');
+
+for (var i = 0; i < tooltips.length; i++) {
+
+  if (isMobile) {
+
+    var newTooltip = null;
+
+    tooltips[i].addEventListener('click', function () {
+
+      if (newTooltip == null) {
+        newTooltip = document.createElement('span');
+        newTooltip.classList.add('tooltipText');
+        newTooltip.innerText = this.dataset.text;
+        this.appendChild(newTooltip);
+      } else if (newTooltip != null) {
+        newTooltip = null;
+        var tooltipDelete = document.querySelector('.tooltipText');
+        tooltipDelete.parentElement.removeChild(tooltipDelete);
+      }
+    });
+  }
+  // else {
+  //   tooltips[i].addEventListener('mouseover', function () {
+  //
+  //     var newTooltip = document.createElement('span');
+  //     newTooltip.classList.add('tooltipText');
+  //     newTooltip.innerText = this.dataset.text;
+  //     this.appendChild(newTooltip);
+  //
+  //   });
+  //
+  //   tooltips[i].addEventListener('mouseout', function () {
+  //
+  //     var tooltipDelete = document.querySelector('.tooltipText');
+  //     tooltipDelete.parentElement.removeChild(tooltipDelete);
+  //
+  //   });
+  // }
+}
+
 
 /* --------------- CONTACT FORM --------------- */
 
