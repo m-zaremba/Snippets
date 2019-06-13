@@ -70,10 +70,12 @@ nav .container {
 
 /* --------------- INFINITE SLIDER --------------- */
 
-/* .slider-section {
+.slider-section {
   height: auto;
   display: flex;
   justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
 }
 
 .slider{
@@ -82,6 +84,7 @@ nav .container {
   margin: 0 auto;
   padding: 0;
   position: relative;
+  width: 100%;
 }
 
 .slider ul{
@@ -99,7 +102,7 @@ nav .container {
   top: 50%;
   right: 0;
   transform: translate(0, -50%);
-  height: 90%;
+  /* height: 90%; */
 }
 
 #prevPicture {
@@ -107,8 +110,17 @@ nav .container {
   top: 50%;
   left: 0;
   transform: translate(0, -50%);
-  height: 90%;
-} */
+  /* height: 90%; */
+}
+
+.slider button {
+  font-size: 4rem;
+  background: none;
+  border: none;
+  margin: 0 10px;
+  outline:none;
+  color: rgba(0, 0, 0, .75);
+}
 
 /* --------------- ACCORDION --------------- */
 
@@ -222,6 +234,22 @@ nav .container {
     width: calc(100% - 25px);
 }
 
+/* --------------- GALLERY WITH FILTER --------------- */
+
+#gallery .invisible {
+    display: none;
+}
+
+#gallery img {
+    width: 100px;
+    height: auto;
+}
+
+.gallery-filer .container {
+  text-align: center;
+}
+
+
 /* --------------- PARALLAX --------------- */
 
 /* .scene {
@@ -306,6 +334,14 @@ nav .container {
         margin: 55px auto 5px;
         width: auto;
         height: calc(100% - 120px);
+    }
+
+    .slider-section {
+      padding: 3rem 0;
+    }
+
+    .slider button:hover {
+      text-shadow: 0 0 8px #000;
     }
 
   }

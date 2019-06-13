@@ -93,6 +93,51 @@ $(function() {
     })
   }
 
+/* --------------- GALLERY WITH FILTER --------------- */
+
+   var pictures = document.querySelectorAll('#gallery img');
+   var hideBtn = document.querySelector('#hideButton');
+   var showBtn = document.querySelector('#showButton');
+   var inputTag = document.querySelector('#tagInput');
+
+
+  showBtn.addEventListener('click', function () {
+
+    var inputShowValue = inputTag.value;
+    inputTag.value = ''; //wyczyszczenie tekstu w polu input po wpisaniu i kliknięciu
+
+    for (var i = 0; i < pictures.length; i++) {
+
+      var dataTagString = pictures[i].dataset.tag;
+      var picturesTagArray = dataTagString.split(',');
+
+      if (picturesTagArray.indexOf(inputShowValue) > -1) {
+        pictures[i].classList.remove('invisible');
+      }
+    }
+
+
+  });
+
+  hideBtn.addEventListener('click', function () {
+
+    var inputHideValue = inputTag.value;
+    inputTag.value = '';
+
+    for (var i = 0; i < pictures.length; i++) {
+
+      var dataTagString = pictures[i].dataset.tag;
+      var picturesTagArray = dataTagString.split(',');
+
+      if (picturesTagArray.indexOf(inputHideValue) > -1) {
+        pictures[i].classList.add('invisible');
+      }
+    }
+
+
+  });
+
+
 /* --------------- INFINITE SLIDER --------------- */
 
   function sliderAnimation() {
