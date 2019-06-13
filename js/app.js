@@ -27,6 +27,72 @@ $(function() {
     }
   })
 
+
+/* --------------- ACCORDION --------------- */
+
+  const questions = $('h3');
+  const answers = $('p');
+
+  questions.on('click', function(e){
+    if($(e.currentTarget).next().css('display') === 'none') {
+      $('.QA').find('p').slideUp();
+      $(e.currentTarget).next().slideDown();
+    } else {
+      $(e.currentTarget).next().slideUp();
+    }
+  })
+
+/* --------------- SIMPLE TABS --------------- */
+
+  const tabs = $('.tabs').find('li');
+  const text = $('.tabs').find('div');
+
+  tabs.each(function(i) {
+    $(this).on('click', function() {
+      if (text.eq(i).css('display') === 'none') {
+        text.slideUp();
+        text.eq(i).slideDown();
+      } else {
+        text.eq(i).slideUp();
+      }
+    })
+  })
+
+/* --------------- GALLERY --------------- */
+
+  var list = document.querySelectorAll('.gallery li');
+  var bodyTag = document.querySelector('body');
+
+
+  for(i = 0; i < list.length; i++) {
+    list[i].addEventListener('click', function () {
+
+      var link = this.firstElementChild.getAttribute('src');
+
+      var newDiv = document.createElement('div');
+      var newImg = document.createElement('img');
+      var newButton = document.createElement('button');
+
+      bodyTag.appendChild(newDiv);
+      newDiv.appendChild(newImg);
+      newDiv.appendChild(newButton);
+
+      newDiv.className = 'fullScreen';
+      newButton.className = 'close';
+      newImg.setAttribute('src', link);
+
+      newButton.style.width = '100px';
+      newButton.style.height = '40px';
+      newButton.innerText = 'ZAMKNIJ';
+
+      newButton.addEventListener('click', function () {
+        var toDelete = document.querySelector('.fullScreen');
+        toDelete.parentElement.removeChild(toDelete);
+      })
+
+    })
+  }
+
 /* --------------- INFINITE SLIDER --------------- */
 
   function sliderAnimation() {
@@ -67,34 +133,6 @@ $(function() {
 
   sliderAnimation();
 
-/* --------------- ACCORDION --------------- */
-
-  const questions = $('h3');
-  const answers = $('p');
-
-  questions.on('click', function(e){
-    if($(e.currentTarget).next().css('display') === 'none') {
-      $('.QA').find('p').slideUp();
-      $(e.currentTarget).next().slideDown();
-    } else {
-      $(e.currentTarget).next().slideUp();
-    }
-  })
-
-/* --------------- SIMPLE TABS --------------- */
-
-  const tabs = $('.tabs').find('li');
-  const text = $('.tabs').find('div');
-
-  tabs.each(function(i) {
-    $(this).on('click', function() {
-      if (text.eq(i).css('display') === 'none') {
-        text.eq(i).slideDown();
-      } else {
-        text.eq(i).slideUp();
-      }
-    })
-  })
 
 /* --------------- PARALLAX --------------- */
 

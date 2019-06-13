@@ -152,26 +152,75 @@ nav .container {
 
 /* --------------- SIMPLE TABS --------------- */
 
-/* .tabs-section {
+.tabs-section {
   height: auto;
+  background-color: gray;
+  padding: 2rem 0;
 }
 
 .tabs ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 .tabs li {
     display: inline-block;
+    width: 24%;
+    text-align: center;
 }
 
-.tabs .selected {
-    background-color: aquamarine;
+.tabs {
+    padding: 1rem 0;
 }
 
 .tabs div {
     display: none;
-} */
+    padding-top: 1rem;
+    text-align: center;
+}
+
+
+/* --------------- GALLERY --------------- */
+
+.gallery-section .container {
+  text-align: center;
+}
+
+.gallery ul {
+    list-style: none;
+}
+
+.gallery li {
+    display: inline-block;
+}
+
+.gallery li img {
+    width: 100px;
+    height: 100px;
+}
+
+.fullScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background:rgba(255,255,255,0.7);
+}
+.fullScreen .close {
+    display: block;
+    margin: auto;
+}
+
+.fullScreen img {
+    display: block;
+    /* margin-top: 50%; */
+    margin: 55px auto 5px;
+    height: auto;
+    width: calc(100% - 25px);
+}
 
 /* --------------- PARALLAX --------------- */
 
@@ -231,10 +280,6 @@ nav .container {
   border-color: red !important;
 } */
 
-.test {
-  height: 2000px;
-  background-image: linear-gradient(red, yellow);
-}
 
 @media only screen and (min-width: 768px) {
     h1 {
@@ -247,6 +292,20 @@ nav .container {
         letter-spacing: 3px;
         padding-top: 10px;
         padding-right: 3%;
+    }
+
+    .QA h3 {
+      width: 45%;
+    }
+
+    .QA p {
+      width: 45%;
+    }
+
+    .fullScreen img {
+        margin: 55px auto 5px;
+        width: auto;
+        height: calc(100% - 120px);
     }
 
   }
