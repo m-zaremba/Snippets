@@ -112,20 +112,43 @@ nav .container {
 
 /* --------------- ACCORDION --------------- */
 
-/* .accordion {
+.accordion {
   height: auto;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.accordion .container {
+  padding: 0 0;
 }
 
 .QA h3 {
-    margin: 0;
+    display: block;
     padding: 15px;
+    /* margin-bottom: 3rem; */
 }
 
 .QA p {
     display: none;
-    padding-left: 15px;
-    margin: 0;
-} */
+    padding: 15px;
+    /* margin-top: -3rem; */
+}
+
+.QA h3:nth-of-type(odd) {
+  background-color: green;
+}
+
+.QA p:nth-of-type(odd) {
+  background-color: green;
+}
+
+.QA h3:nth-of-type(even) {
+  background-color: violet;
+}
+
+.QA p:nth-of-type(even) {
+  background-color: violet;
+}
 
 /* --------------- SIMPLE TABS --------------- */
 
