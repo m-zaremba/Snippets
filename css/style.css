@@ -28,6 +28,16 @@ header {
   width: 100%;
   text-align: center;
   background-color: black;
+  position: relative;
+  padding-bottom: 10vw;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vw;
 }
 
 .container {
@@ -41,30 +51,32 @@ header {
 /* --------------- NAVIGATION --------------- */
 
 nav {
-    height: 50px;
+    height: auto;
+    padding-bottom: 10vw;
+    position: relative;
+    background-color: rgb(255, 176, 0)
 }
 
 .navigation {
-    height: 50px;
-    background-color: rgb(107, 27, 196);
+    /* height: 50px; */
+    background-color: rgb(255, 176, 0);
 }
 
 nav .container {
   padding: 0 10px;
+  text-align: center;
 }
 
 .menu {
     list-style: none;
-    padding: 0;
-    height: 50px;
+    padding: 1rem 0;
+
 }
 
 .menu li {
     display: inline-block;
     font-size: 1rem;
     letter-spacing: 2px;
-    padding-top: 15px;
-    padding-right: 10px;
 }
 
 .sticky {
@@ -82,7 +94,7 @@ nav .container {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 2rem;
+  background-color: gray;
 }
 
 .slider{
@@ -133,48 +145,72 @@ nav .container {
 
 .accordion {
   height: auto;
-  padding: 3rem 0;
+  padding-bottom: 10vw;
   text-align: center;
+  position: relative;
 }
+
+/* .accordion svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vw;
+} */
 
 .accordion .container {
   padding: 0 0;
 }
 
+.QA {
+  padding: 2rem;
+
+}
+
 .QA h3 {
     display: block;
     padding: 15px;
-    /* margin-bottom: 3rem; */
+    border: 3px solid white;
 }
 
 .QA p {
     display: none;
     padding: 15px;
-    /* margin-top: -3rem; */
 }
 
-.QA h3:nth-of-type(odd) {
-  background-color: green;
-}
-
+.QA h3:nth-of-type(odd),
 .QA p:nth-of-type(odd) {
-  background-color: green;
+  background-color: black;
+  color: rgb(255, 176, 0);
 }
 
-.QA h3:nth-of-type(even) {
-  background-color: violet;
-}
 
+.QA h3:nth-of-type(even),
 .QA p:nth-of-type(even) {
-  background-color: violet;
+  background-color: rgb(255, 176, 0);
+  color: black;
 }
+
 
 /* --------------- SIMPLE TABS --------------- */
 
 .tabs-section {
   height: auto;
   background-color: gray;
-  padding: 2rem 0;
+  position: relative;
+  padding-bottom: 10vw;
+}
+
+.tabs-section span {
+  font-size: 0.6rem;
+}
+
+.tabs-section svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vw;
 }
 
 .tabs ul {
@@ -185,12 +221,13 @@ nav .container {
 
 .tabs li {
     display: inline-block;
-    width: 24%;
+    width: 19%;
     text-align: center;
 }
 
 .tabs {
     padding: 1rem 0;
+    text-align: center;
 }
 
 .tabs div {
@@ -202,8 +239,25 @@ nav .container {
 
 /* --------------- GALLERY --------------- */
 
+.gallery-section {
+  background-color: rgb(255, 176, 0);
+  padding-bottom: 10vw;
+  position: relative;
+}
+
 .gallery-section .container {
   text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2em;
+  color: white;
+  font-family: Arial;
+  padding-top: 1rem;
+}
+
+.gallery {
+  padding: 2rem 0;
 }
 
 .gallery ul {
@@ -228,6 +282,7 @@ nav .container {
     z-index: 1;
     background:rgba(255,255,255,0.7);
 }
+
 .fullScreen .close {
     display: block;
     margin: auto;
@@ -243,6 +298,22 @@ nav .container {
 
 /* --------------- GALLERY WITH FILTER --------------- */
 
+.gallery-filer {
+  background-color: black;
+  position: relative;
+}
+
+.gallery-filer h2 {
+  font-size: 2em;
+  color: white;
+  font-family: Arial;
+  padding-top: 1rem;
+}
+
+#gallery {
+  padding-top: 2rem;
+}
+
 #gallery .invisible {
     display: none;
 }
@@ -254,6 +325,35 @@ nav .container {
 
 .gallery-filer .container {
   text-align: center;
+  padding-bottom: 4rem;
+}
+
+#tagInput {
+  border: none;
+  width: 80%;
+  padding: 10px;
+  height: 2rem;
+  margin-top: 2rem;
+}
+
+.gallery-filer button {
+  width: 70px;
+  height: 20px;
+  margin: 1rem;
+  border: none;
+  background-color: rgb(255, 176, 0);
+  font-weight: bolder;
+  text-transform: uppercase;
+
+}
+
+#gallery .fullScreen {
+    width: 100%;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    z-index: 1;
+    background:rgba(255,255,255,0.7);
 }
 
 
@@ -261,6 +361,7 @@ nav .container {
 
 .parallax {
   padding: 2rem 2rem;
+  background-color: 'white';
 }
 
 .scene {
@@ -292,6 +393,8 @@ nav .container {
 
 .mobile-info {
   display: none;
+  background-color: rgb(255, 176, 0);
+  padding: 10px 10px;
 }
 
 
@@ -299,7 +402,7 @@ nav .container {
 
 .tooltip {
     text-decoration: underline;
-    color: darkblue;
+    color: black;
     position: relative;
     display: inline-block;
 }
@@ -308,16 +411,22 @@ nav .container {
     position: absolute;
     top: 100%;
     display: block;
-    background-color: white;
-    color: black;
-    border: solid black 1px;
+    background-color: black;
+    color: rgb(255, 176, 0);
     z-index: 1;
+    padding-left: 0.6rem;
 }
 
 /* --------------- CSS SPRITE ANIMATION --------------- */
 
+.css-sprite {
+  background-color: black;
+  position: relative;
+  padding-bottom: 10vw;
+}
+
 .css-sprite .container {
-  padding: 10px 0;
+  padding: 0;
 }
 
 .css-sprite span {
@@ -390,18 +499,29 @@ nav .container {
 
 /* --------------- CONTACT FORM --------------- */
 
-/* .contact-form {
+.contact-form {
   height: auto;
+  background-color: rgb(255, 176, 0);
+  position: relative;
+  padding-bottom: 10vw;
+}
+
+.contact-form h2 {
+  font-size: 2em;
+}
+
+.contact-form .container {
+  text-align: center;
 }
 
 #contactForm {
-  width: 505px;
-  margin: 20px auto;
+  width: 100%;
+  padding: 0 2rem;
 }
 
 #contactForm input,
 #contactForm textarea {
-  width: 350px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 0.5em;
@@ -411,31 +531,35 @@ nav .container {
 
 #contactForm label {
   display: inline-block;
-  width: 150px;
+  width: 100%;
   margin-top: 20px;
 }
 
 .error {
-  width: 260px;
+  width: 20rem;
   margin-top: 25px;
 }
 
 .marked {
   border-color: red !important;
-} */
+}
+
+#contactForm .submit {
+  background-color: black;
+  color: rgb(255, 176, 0);
+  border: none;
+
+}
 
 
 @media only screen and (min-width: 768px) {
-    h1 {
+    h1, h2 {
       font-size: 6rem;
     }
 
     .menu li {
-
         font-size: 1.5rem;
         letter-spacing: 3px;
-        padding-top: 10px;
-        padding-right: 3%;
     }
 
     .QA h3 {
@@ -446,25 +570,80 @@ nav .container {
       width: 45%;
     }
 
+    .gallery-section h2 {
+      font-size: 6rem;
+    }
+
+    .gallery li img {
+        width: 300px;
+        height: 300px;
+    }
+
     .fullScreen img {
         margin: 55px auto 5px;
         width: auto;
         height: calc(100% - 120px);
     }
 
+    .gallery-filer {
+      padding-bottom: 10vw;
+    }
+
+    .gallery-filer h2 {
+      font-size: 6rem;
+    }
+
+    .gallery-filer button {
+      font-size: 1.5rem;
+      width: 140px;
+      height: 40px;
+      margin: 1rem 2rem;
+    }
+
+    #gallery img {
+        width: 300px;
+    }
+
+    #gallery .fullScreen {
+        width: 400px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 5%;
+
+    }
+
     .slider-section {
-      padding: 3rem 0;
+      padding-top: 2rem;
+      padding-bottom: 15vw;
+      position: relative;
     }
 
     .slider button:hover {
       text-shadow: 0 0 8px #000;
     }
 
+    .parallax {
+      padding-bottom: 10vw;
+      position: relative;
+    }
+
+    .scene {
+      margin: 3rem 0;
+    }
+
     .css-sprite .container {
-      padding: 10px 10px;
+      padding: 2rem 0;
     }
 
     .css-sprite span {
+      font-size: 6em;
+    }
+
+    #contactForm {
+      width: 40%;
+    }
+
+    .contact-form h2 {
       font-size: 6em;
     }
 

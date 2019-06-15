@@ -1,9 +1,13 @@
 $(function() {
 
-  var scene = $('.scene');
+  var parallaxScene = $('.scene');
+  var galleryFiltBottom = $('.mobile-bottom');
+  var mobileInfo = $('.parallax');
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
-      scene.css('display', 'none');
+      parallaxScene.css('display', 'none');
+      galleryFiltBottom.css('display', 'none');
+      mobileInfo.css('backgroundColor', 'black');
     }
 
 /* --------------- STICKY NAV BAR --------------- */
@@ -98,13 +102,14 @@ $(function() {
    var pictures = document.querySelectorAll('#gallery img');
    var hideBtn = document.querySelector('#hideButton');
    var showBtn = document.querySelector('#showButton');
+   var hintBtn = document.querySelector('#hintButton');
    var inputTag = document.querySelector('#tagInput');
 
 
   showBtn.addEventListener('click', function () {
 
     var inputShowValue = inputTag.value;
-    inputTag.value = ''; //wyczyszczenie tekstu w polu input po wpisaniu i kliknięciu
+    inputTag.value = '';
 
     for (var i = 0; i < pictures.length; i++) {
 
@@ -115,8 +120,6 @@ $(function() {
         pictures[i].classList.remove('invisible');
       }
     }
-
-
   });
 
   hideBtn.addEventListener('click', function () {
@@ -133,6 +136,11 @@ $(function() {
         pictures[i].classList.add('invisible');
       }
     }
+  });
+
+  hintBtn.addEventListener('click', function () {
+    var inputHintValue = inputTag.value;
+    inputTag.value = 'home-alone';
 
 
   });
@@ -181,7 +189,7 @@ $(function() {
 
 /* --------------- PARALLAX --------------- */
 
-var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+//var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 function parallaxEffect() {
 

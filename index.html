@@ -14,6 +14,9 @@
       <div class='container'>
         <h1>Anything interesting, did we do?</h1>
       </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon fill="rgb(255, 176, 0)" points="0,100 100,0 100,100"/>
+      </svg>
     </header>
     <nav>
       <div class='navigation'>
@@ -23,48 +26,65 @@
           </ul>
         </div>
       </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon fill="gray" points="0,100 100,0 100,100"/>
+      </svg>
     </nav>
-
-    <section class='accordion'>
-      <div class='container'>
-        <div class="QA">
-            <h3>What about accordion-like FAQ section?</h3>
-            <p>But that's too easy...</p>
-            <h3>Too easy??? Even with all this styling?</h3>
-            <p>Knowing :nth-of-type is cool (sometimes even useful), but it doesn't mean you know how to style!</p>
-            <h3>How many lines of code?</h3>
-            <p>Hateful 8! (well... 10 to be honest)</p>
-        </div>
-      </div>
-    </section>
 
     <section class='tabs-section'>
       <div class='container'>
         <div class="tabs">
             <ul>
-                <li>No</li>
-                <li>Space</li>
-                <li>For</li>
-                <li>Accordion?</li>
+                <li>THIS</li>
+                <li>IS</li>
+                <li>NOT</li>
+                <li>A</li>
+                <li>NAVBAR</li>
             </ul>
+            <span>(But click anyway...)</span>
             <div>
-                Then
+                IT'S
             </div>
             <div>
-                Do
+                A
             </div>
             <div>
-                It
+                SIMPLE
             </div>
             <div>
-                Flat
+                Q&A-LIKE
+            </div>
+            <div>
+                SECTION
             </div>
         </div>
       </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="white" points="0,100 100,0 100,100"/>
+      </svg>
+    </section>
+
+    <section class='accordion'>
+      <div class='container'>
+        <div class="QA">
+            <h3>Click me too...</h3>
+            <p>As you can see, I'm an accordion-type Q&A section</p>
+            <h3>So, what's going on?</h3>
+            <p>This page shows some useful tasks from my IT bootcamp</p>
+            <h3>JS or jQuery?</h3>
+            <p>Both. Shaken, not stirred.</p>
+            <h3>How many lines of code for this?</h3>
+            <p>Hateful 8! (well... 10 to be honest)</p>
+        </div>
+      </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="rgb(255, 176, 0)" points="0,100 100,0 100,100"/>
+      </svg>
     </section>
 
     <section class="gallery-section">
       <div class="container">
+        <h2>A SIMPLE GALLERY</h2>
         <ul class="gallery">
           <li><img src="images/1.jpeg"></li>
           <li><img src="images/2.jpeg"></li>
@@ -74,10 +94,14 @@
           <li><img src="images/6.jpeg"></li>
         </ul>
       </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="black" points="0,100 100,0 100,100"/>
+      </svg>
     </section>
 
     <section class="gallery-filer">
       <div class="container">
+        <h2>FILTER-BY-TAG GALLERY</h2>
         <div id="gallery">
           <img data-tag="baseball,sport,people" src="images/f1.jpeg">
           <img data-tag="bike,people" src="images/f2.jpeg">
@@ -85,12 +109,17 @@
           <img data-tag="people" src="images/f4.jpeg">
           <img data-tag="people,nightlife" src="images/f5.jpeg">
           <img data-tag="nightlife" src="images/f6.jpeg">
+          <img data-tag="home-alone" src="images/home-alone.png" class='invisible fullScreen'>
         </div>
-        <input id="tagInput" type="text" placeholder="Enter tag here">
+        <input id="tagInput" type="text" placeholder="Enter tag and click button">
         <br>
         <button id="showButton">Show</button>
         <button id="hideButton">Hide</button>
+        <button id="hintButton">Hint</button>
       </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" class='mobile-bottom'>
+      <polygon fill="gray" points="100,100 0,0 0,100"/>
+      </svg>
     </section>
 
     <section class=slider-section>
@@ -106,6 +135,9 @@
         <button id="nextPicture">></button>
         <button id="prevPicture"><</button>
      </div>
+     <svg viewBox="0 0 100 100" preserveAspectRatio="none" class='mobile-bottom'>
+     <polygon fill="white" points="100,100 0,0 0,100"/>
+     </svg>
     </section>
 
     <section class='parallax'>
@@ -116,8 +148,11 @@
         <div class="element" data-x="50" data-y="100" data-speed="0.1" data-z="1"></div>
         <div class="element" data-x="100" data-y="150" data-speed="0.4" data-z="3"></div>
         <div class="element" data-x="250" data-y="200" data-speed="0.3" data-z="4"></div>
-        <div class='text'>Hello World!</div>
+        <div class='text'>Hello Parallax!</div>
       </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" class='mobile-bottom'>
+      <polygon fill="black" points="100,100 0,0 0,100"/>
+      </svg>
     </section>
 
     <section class='css-sprite'>
@@ -128,9 +163,14 @@
           <button class='stop-sprite'>Save the World</button>
         </div>
       </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="rgb(255, 176, 0)" points="0,0 0,100 50,100 100,100 100,0 50,100"/>
+      </svg>
     </section>
 
-    <!-- <section class='contact-form'>
+    <section class='contact-form'>
+      <div class="container">
+        <h2>CONTACT</h2>
       <form id="contactForm">
           <label>
               Name:
@@ -149,9 +189,13 @@
           <br>
           <div class="error"></div>
           <br>
-          <input type="submit">
+          <input class='submit' type="submit">
       </form>
-    </section> -->
+      </div>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon fill="black" points="0,0 0,100 50,100 100,100 100,0 50,100"/>
+      </svg>
+    </section>
 
 </body>
 </html>
