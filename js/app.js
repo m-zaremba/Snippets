@@ -4,13 +4,13 @@ $(function() {
   var galleryFiltBottom = $('.mobile-bottom');
   var mobileInfo = $('.parallax');
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      parallaxScene.css('display', 'none');
-      galleryFiltBottom.css('display', 'none');
-      mobileInfo.css('backgroundColor', 'black');
-    }
+  if (isMobile) {
+    parallaxScene.css('display', 'none');
+    galleryFiltBottom.css('display', 'none');
+    mobileInfo.css('backgroundColor', 'black');
+  }
 
-/* --------------- STICKY NAV BAR --------------- */
+  /* --------------- STICKY NAV BAR --------------- */
 
   const nav = $('.navigation');
   let navPos = nav.offset().top;
@@ -32,13 +32,13 @@ $(function() {
   })
 
 
-/* --------------- ACCORDION --------------- */
+  /* --------------- ACCORDION --------------- */
 
   const questions = $('h3');
   const answers = $('p');
 
-  questions.on('click', function(e){
-    if($(e.currentTarget).next().css('display') === 'none') {
+  questions.on('click', function(e) {
+    if ($(e.currentTarget).next().css('display') === 'none') {
       $('.QA').find('p').slideUp();
       $(e.currentTarget).next().slideDown();
     } else {
@@ -46,7 +46,7 @@ $(function() {
     }
   })
 
-/* --------------- SIMPLE TABS --------------- */
+  /* --------------- SIMPLE TABS --------------- */
 
   const tabs = $('.tabs').find('li');
   const text = $('.tabs').find('div');
@@ -62,14 +62,14 @@ $(function() {
     })
   })
 
-/* --------------- GALLERY --------------- */
+  /* --------------- GALLERY --------------- */
 
   var list = document.querySelectorAll('.gallery li');
   var bodyTag = document.querySelector('body');
 
 
-  for(i = 0; i < list.length; i++) {
-    list[i].addEventListener('click', function () {
+  for (i = 0; i < list.length; i++) {
+    list[i].addEventListener('click', function() {
 
       var link = this.firstElementChild.getAttribute('src');
 
@@ -89,7 +89,7 @@ $(function() {
       newButton.style.height = '40px';
       newButton.innerText = 'ZAMKNIJ';
 
-      newButton.addEventListener('click', function () {
+      newButton.addEventListener('click', function() {
         var toDelete = document.querySelector('.fullScreen');
         toDelete.parentElement.removeChild(toDelete);
       })
@@ -97,16 +97,16 @@ $(function() {
     })
   }
 
-/* --------------- GALLERY WITH FILTER --------------- */
+  /* --------------- GALLERY WITH FILTER --------------- */
 
-   var pictures = document.querySelectorAll('#gallery img');
-   var hideBtn = document.querySelector('#hideButton');
-   var showBtn = document.querySelector('#showButton');
-   var hintBtn = document.querySelector('#hintButton');
-   var inputTag = document.querySelector('#tagInput');
+  var pictures = document.querySelectorAll('#gallery img');
+  var hideBtn = document.querySelector('#hideButton');
+  var showBtn = document.querySelector('#showButton');
+  var hintBtn = document.querySelector('#hintButton');
+  var inputTag = document.querySelector('#tagInput');
 
 
-  showBtn.addEventListener('click', function () {
+  showBtn.addEventListener('click', function() {
 
     var inputShowValue = inputTag.value;
     inputTag.value = '';
@@ -122,7 +122,7 @@ $(function() {
     }
   });
 
-  hideBtn.addEventListener('click', function () {
+  hideBtn.addEventListener('click', function() {
 
     var inputHideValue = inputTag.value;
     inputTag.value = '';
@@ -138,7 +138,7 @@ $(function() {
     }
   });
 
-  hintBtn.addEventListener('click', function () {
+  hintBtn.addEventListener('click', function() {
     var inputHintValue = inputTag.value;
     inputTag.value = 'home-alone';
 
@@ -146,7 +146,7 @@ $(function() {
   });
 
 
-/* --------------- INFINITE SLIDER --------------- */
+  /* --------------- INFINITE SLIDER --------------- */
 
   function sliderAnimation() {
 
@@ -165,7 +165,9 @@ $(function() {
 
     nextBtn.on('click', function() {
       photoIndex += 1;
-      $('.slider ul').animate({'left': `-${photoWidth * photoIndex}`}, 200, function() {
+      $('.slider ul').animate({
+        'left': `-${photoWidth * photoIndex}`
+      }, 200, function() {
         if (photoIndex === photosAfterClone.length - 1) {
           $('.slider ul').css('left', '-900px');
           photoIndex = 1;
@@ -175,10 +177,12 @@ $(function() {
 
     prevBtn.on('click', function() {
       photoIndex -= 1;
-      $('.slider ul').animate({'left': `-${photoWidth * photoIndex}`}, 200, function() {
+      $('.slider ul').animate({
+        'left': `-${photoWidth * photoIndex}`
+      }, 200, function() {
         if (photoIndex <= 0) {
           $('.slider ul').css('left', `-${photoWidth * (photosAfterClone.length-2)}px`);
-          photoIndex = photosAfterClone.length-2;
+          photoIndex = photosAfterClone.length - 2;
         }
       });
     })
@@ -187,11 +191,10 @@ $(function() {
   sliderAnimation();
 
 
-/* --------------- PARALLAX --------------- */
+  /* --------------- PARALLAX --------------- */
 
-//var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-function parallaxEffect() {
+  function parallaxEffect() {
 
     var scene = $('.scene');
     var mobileInfo = $('.mobile-info');
@@ -223,7 +226,7 @@ function parallaxEffect() {
       var currentMousePositionX = event.offsetX;
       var currentMousePositionY = event.offsetY;
 
-      elements.each(function(i,e) {
+      elements.each(function(i, e) {
         var currentMousePositionX = $(e).css('left');
         var currentMousePositionY = $(e).css('top');
       })
@@ -248,150 +251,141 @@ function parallaxEffect() {
   parallaxEffect();
 
 
-/* --------------- TOOLTIP --------------- */
+  /* --------------- TOOLTIP --------------- */
 
-var tooltips = document.querySelectorAll('.tooltip');
+  var tooltips = document.querySelectorAll('.tooltip');
 
-for (var i = 0; i < tooltips.length; i++) {
+  for (var i = 0; i < tooltips.length; i++) {
 
-  if (isMobile) {
+    if (isMobile) {
 
-    var newTooltip = null;
+      var newTooltip = null;
 
-    tooltips[i].addEventListener('click', function () {
+      tooltips[i].addEventListener('click', function() {
 
-      if (newTooltip == null) {
-        newTooltip = document.createElement('span');
-        newTooltip.classList.add('tooltipText');
-        newTooltip.innerText = this.dataset.text;
-        this.appendChild(newTooltip);
-      } else if (newTooltip != null) {
-        newTooltip = null;
-        var tooltipDelete = document.querySelector('.tooltipText');
-        tooltipDelete.parentElement.removeChild(tooltipDelete);
-      }
-    });
+        if (newTooltip == null) {
+          newTooltip = document.createElement('span');
+          newTooltip.classList.add('tooltipText');
+          newTooltip.innerText = this.dataset.text;
+          this.appendChild(newTooltip);
+        } else if (newTooltip != null) {
+          newTooltip = null;
+          var tooltipDelete = document.querySelector('.tooltipText');
+          tooltipDelete.parentElement.removeChild(tooltipDelete);
+        }
+      });
+    }
+    // else {
+    //   tooltips[i].addEventListener('mouseover', function () {
+    //
+    //     var newTooltip = document.createElement('span');
+    //     newTooltip.classList.add('tooltipText');
+    //     newTooltip.innerText = this.dataset.text;
+    //     this.appendChild(newTooltip);
+    //
+    //   });
+    //
+    //   tooltips[i].addEventListener('mouseout', function () {
+    //
+    //     var tooltipDelete = document.querySelector('.tooltipText');
+    //     tooltipDelete.parentElement.removeChild(tooltipDelete);
+    //
+    //   });
+    // }
   }
-  // else {
-  //   tooltips[i].addEventListener('mouseover', function () {
-  //
-  //     var newTooltip = document.createElement('span');
-  //     newTooltip.classList.add('tooltipText');
-  //     newTooltip.innerText = this.dataset.text;
-  //     this.appendChild(newTooltip);
-  //
-  //   });
-  //
-  //   tooltips[i].addEventListener('mouseout', function () {
-  //
-  //     var tooltipDelete = document.querySelector('.tooltipText');
-  //     tooltipDelete.parentElement.removeChild(tooltipDelete);
-  //
-  //   });
-  // }
-}
 
-/* --------------- CSS SPRITE ANIMATION --------------- */
+  /* --------------- CSS SPRITE ANIMATION --------------- */
 
   var time = null;
 
-   function start () {
-     time = setInterval(function () {
+  function start() {
+    time = setInterval(function() {
 
-       /* Wersja z w pełni losową odległością zombie od dołu ekranu (bottom), losowym rozmyciem (blur) i wielkością (scale) */
+      var walkSpeed = Math.floor(Math.random() * 24) + 8;
+      var bottomArray = [0, 10, 20, 25, 30, 45, 60, 70, 80, 90];
+      var randomBottom = bottomArray[Math.floor(Math.random() * bottomArray.length)];
 
-       // var bottom = Math.floor(Math.random() * 200) + -80;
-       // var scale = Math.floor(Math.random() * 2) + 7;
-       // var blur = Math.floor(Math.random() * 3);
+      var blur = null;
+      var scale = null;
+      var order = null;
 
+      if (randomBottom === 0) {
+        blur = 1.5;
+        scale = 1.5;
+        order = 10;
+      } else if (randomBottom === 10) {
+        blur = 1;
+        scale = 1;
+        order = 9;
+      } else if (randomBottom === 20) {
+        blur = .2;
+        scale = .9;
+        order = 8;
+      } else if (randomBottom === 25) {
+        blur = .3;
+        scale = .8;
+        order = 7;
+      } else if (randomBottom === 30) {
+        blur = .5;
+        scale = .75;
+        order = 6;
+      } else if (randomBottom === 45) {
+        blur = .6;
+        scale = .7;
+        order = 5;
+      } else if (randomBottom === 60) {
+        blur = .7;
+        scale = .6;
+        order = 4;
+      } else if (randomBottom === 70) {
+        blur = .8;
+        scale = .55;
+        order = 3;
+      } else if (randomBottom === 80) {
+        blur = .9;
+        scale = .5;
+        order = 2;
+      } else {
+        blur = 1;
+        scale = .4;
+        order = 1;
+      }
 
-       /* Wersja uwzględniająca wielkość i oddalenie zombie wobec perspektywy patrzącego (uwzględnienie wartości z-index) + głębia ostrości */
+      var zombie = document.createElement('div');
+      zombie.classList.add('zombie');
+      zombie.style.bottom = randomBottom + 'px';
+      zombie.style.transform = 'scale(' + scale + ')';
+      zombie.style.filter = 'blur(' + blur + 'px)';
+      zombie.style.zIndex = order.toString();
+      zombie.style.animationDuration = '400ms, ' + walkSpeed + 's';
 
-       var walkSpeed = Math.floor(Math.random() * 24) + 8;
-       var bottomArray = [0, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-       var randomBottom = bottomArray[Math.floor(Math.random() * bottomArray.length)];
+      zombie.addEventListener("animationend", function() {
+        this.parentElement.removeChild(this);
+      });
 
-       var blur = null;
-       var scale = null;
-       var order = null;
+      var board = document.querySelector('.board');
+      board.appendChild(zombie);
 
-       if (randomBottom === 0) {
-         blur = 1.5;
-         scale = 1.5;
-         order = 10;
-       } else if (randomBottom === 20) {
-         blur = 1;
-         scale = 1;
-         order = 9;
-       } else if (randomBottom === 30) {
-         blur = .2;
-         scale = .9;
-         order = 8;
-       } else if (randomBottom === 40) {
-         blur = .3;
-         scale = .8;
-         order = 7;
-       } else if (randomBottom === 50) {
-         blur = .5;
-         scale = .75;
-         order = 6;
-       } else if (randomBottom === 60) {
-         blur = .6;
-         scale = .7;
-         order = 5;
-       } else if (randomBottom === 70) {
-         blur = .7;
-         scale = .6;
-         order = 4;
-       } else if (randomBottom === 80) {
-         blur = .8;
-         scale = .55;
-         order = 3;
-       } else if (randomBottom === 90) {
-         blur = .9;
-         scale = .5;
-         order = 2;
-       } else {
-         blur = 1;
-         scale = .4;
-         order = 1;
-       }
+    }, 500);
+  }
 
-       var zombie = document.createElement('div');
-       zombie.classList.add('zombie');
-       zombie.style.bottom = randomBottom +'px';
-       zombie.style.transform = 'scale(' + scale + ')';
-       zombie.style.filter = 'blur(' + blur + 'px)';
-       zombie.style.zIndex = order.toString();
-       zombie.style.animationDuration = '400ms, ' + walkSpeed + 's';
+  var startButton = document.querySelector('.start-sprite');
+  var stopButton = document.querySelector('.stop-sprite');
 
-       zombie.addEventListener("animationend", function() {
-         this.parentElement.removeChild(this);
-       });
+  startButton.addEventListener('click', function() {
+    start();
+  });
 
-       var board = document.querySelector('.board');
-       board.appendChild(zombie);
+  stopButton.addEventListener('click', function() {
 
-     }, 500);
-   }
-
-   var startButton = document.querySelector('.start-sprite');
-   var stopButton = document.querySelector('.stop-sprite');
-
-   startButton.addEventListener('click', function () {
-      start();
-   });
-
-   stopButton.addEventListener('click', function () {
-
-      clearInterval(time);
-      time = null;
-   })
+    clearInterval(time);
+    time = null;
+  })
 
 
-/* --------------- CONTACT FORM --------------- */
+  /* --------------- CONTACT FORM --------------- */
 
-function formHandler() {
+  function formHandler() {
 
     var form = $('#contactForm');
     var name = $('#nameInput');
@@ -414,15 +408,15 @@ function formHandler() {
 
       if (validateEmail() === false) {
         //e.preventDefault();
-        errorArr.push('Email musi posiadać znak @ oraz .');
+        errorArr.push('Enter valid email address.');
         email.addClass('marked');
       } else {
         email.removeClass('marked');
       }
 
-      if (nameInputValue.length <= 5) {
+      if (nameInputValue.length <= 1) {
         //e.preventDefault();
-        errorArr.push('Twoje imię musi być dłuższe niż 5 liter.');
+        errorArr.push("Your name must be longer than 1 character");
         name.addClass('marked');
       } else {
         name.removeClass('marked');
@@ -430,7 +424,7 @@ function formHandler() {
 
       if (messageInputValue.length <= 10) {
         //e.preventDefault();
-        errorArr.push('Wiadomośc musi mieć więcej niż 10 znaków.');
+        errorArr.push('Message must be longer than 10 characters.');
         message.addClass('marked');
       } else {
         message.removeClass('marked');
@@ -440,7 +434,8 @@ function formHandler() {
         e.preventDefault();
         error.text(errorArr.join('\n'));
       } else {
-        error.text('Nie popędzaj - robim co możem...');
+        e.preventDefault();
+        error.text('Sending...');
       }
     })
   }
