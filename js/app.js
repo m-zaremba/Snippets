@@ -10,24 +10,25 @@ $(function() {
     mobileInfo.css('backgroundColor', 'black');
   }
 
-  /* --------------- STICKY NAV BAR --------------- */
+  /* --------------- STICKY SECTION --------------- */
 
-  const nav = $('.navigation');
-  let navPos = nav.offset().top;
+  const stickyBar = $('.menu');
+  const resize = $('.sticky-section');
+  let barPos = stickyBar.offset().top;
 
   $(window).on('scroll', function() {
-    if ($(window).scrollTop() > navPos) {
-      nav.addClass('sticky');
+    if ($(window).scrollTop() > barPos) {
+      stickyBar.addClass('sticky');
     } else {
-      nav.removeClass('sticky');
+      stickyBar.removeClass('sticky');
     }
   });
 
   $(window).on('resize', function() {
-    if (nav.hasClass('sticky')) {
-      navPos = nav.offset().top;
+    if (stickyBar.hasClass('sticky')) {
+      barPos = stickyBar.offset().top;
     } else {
-      navPos = nav.offset().top;
+      barPos = resize.offset().top;
     }
   })
 
@@ -75,21 +76,21 @@ $(function() {
 
       var newDiv = document.createElement('div');
       var newImg = document.createElement('img');
-      var newButton = document.createElement('button');
+      // var newButton = document.createElement('button');
 
       bodyTag.appendChild(newDiv);
       newDiv.appendChild(newImg);
-      newDiv.appendChild(newButton);
+      // newDiv.appendChild(newButton);
 
       newDiv.className = 'fullScreen';
-      newButton.className = 'close';
+      // newButton.className = 'close';
       newImg.setAttribute('src', link);
 
-      newButton.style.width = '100px';
-      newButton.style.height = '40px';
-      newButton.innerText = 'ZAMKNIJ';
+      // newButton.style.width = '100px';
+      // newButton.style.height = '40px';
+      // newButton.innerText = 'ZAMKNIJ';
 
-      newButton.addEventListener('click', function() {
+      newDiv.addEventListener('click', function() {
         var toDelete = document.querySelector('.fullScreen');
         toDelete.parentElement.removeChild(toDelete);
       })
@@ -104,6 +105,35 @@ $(function() {
   var showBtn = document.querySelector('#showButton');
   var hintBtn = document.querySelector('#hintButton');
   var inputTag = document.querySelector('#tagInput');
+
+  for (i = 0; i < list.length; i++) {
+    pictures[i].addEventListener('click', function() {
+
+      var link = this.getAttribute('src');
+
+      var newDiv = document.createElement('div');
+      var newImg = document.createElement('img');
+      // var newButton = document.createElement('button');
+
+      bodyTag.appendChild(newDiv);
+      newDiv.appendChild(newImg);
+      // newDiv.appendChild(newButton);
+
+      newDiv.className = 'filterFullScreen';
+      // newButton.className = 'close';
+      newImg.setAttribute('src', link);
+
+      // newButton.style.width = '100px';
+      // newButton.style.height = '40px';
+      // newButton.innerText = 'ZAMKNIJ';
+
+      newDiv.addEventListener('click', function() {
+        var toDelete = document.querySelector('.filterFullScreen');
+        toDelete.parentElement.removeChild(toDelete);
+      })
+
+    })
+  }
 
 
   showBtn.addEventListener('click', function() {

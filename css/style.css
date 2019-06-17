@@ -56,27 +56,26 @@ svg {
 }
 
 /* --------------- STICKY SECTION --------------- */
-nav {
+.sticky-section {
   height: auto;
   padding-bottom: 10vw;
   position: relative;
-  background-color: rgb(255, 176, 0)
-}
-
-.navigation {
-  /* height: 50px; */
   background-color: rgb(255, 176, 0);
 }
 
-nav .container {
+.wrapper {
+  height: 50px;
+}
+
+.sticky-section .container {
   padding: 0 10px;
-  /* height: 50px; */
   text-align: center;
 }
 
 .menu {
   list-style: none;
   padding: 1rem 0;
+  background-color: rgb(255, 176, 0);
 }
 
 .menu li {
@@ -237,10 +236,10 @@ nav .container {
 
 .fullScreen img {
   display: block;
-  /* margin-top: 50%; */
-  margin: 55px auto 5px;
+  margin-top: 50%;
+  /* margin: 55px auto 5px; */
   height: auto;
-  width: calc(100% - 25px);
+  width: 100%;
 }
 
 /* --------------- GALLERY WITH FILTER --------------- */
@@ -292,13 +291,21 @@ nav .container {
   text-transform: uppercase;
 }
 
-#gallery .fullScreen {
-  width: 100%;
+.filterFullScreen {
   position: fixed;
-  top: 10%;
+  width: 100%;
+  height: 100%;
   left: 0;
+  top: 0;
   z-index: 1;
   background: rgba(255, 255, 255, 0.7);
+}
+.filterFullScreen img {
+  display: block;
+  margin-top: 50%;
+  /* margin: 55px auto 5px; */
+  height: auto;
+  width: 100%;
 }
 
 /* --------------- INFINITE SLIDER --------------- */
@@ -613,7 +620,7 @@ footer {
   .fullScreen img {
     margin: 55px auto 5px;
     width: auto;
-    height: calc(100% - 120px);
+    height: 100%;
   }
 
   .gallery-filer {
@@ -640,11 +647,9 @@ footer {
     width: 300px;
   }
 
-  #gallery .fullScreen {
-    width: 400px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 5%;
+  .filterFullScreen img {
+    width: auto;
+    margin-top: 25%;
   }
 
   .slider-section {
