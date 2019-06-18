@@ -76,6 +76,7 @@ svg {
   list-style: none;
   padding: 1rem 0;
   background-color: rgb(255, 176, 0);
+  height: 50px;
 }
 
 .menu li {
