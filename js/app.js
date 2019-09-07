@@ -1,4 +1,4 @@
-$(function() {
+$(window).on("load", function() {
 
   var parallaxScene = $('.scene');
   var galleryFiltBottom = $('.mobile-bottom');
@@ -24,13 +24,15 @@ $(function() {
     }
   });
 
-  $(window).on('resize', function() {
-    if (stickyBar.hasClass('sticky')) {
-      barPos = stickyBar.offset().top;
-    } else {
-      barPos = resize.offset().top;
-    }
-  })
+  // $(window).on('resize', function() {
+  //   if (stickyBar.hasClass('sticky')) {
+  //     barPos = stickyBar.offset().top;
+  //   } else {
+  //     barPos = resize.offset().top;
+  //   }
+  // })
+
+  console.log(barPos);
 
 
   /* --------------- ACCORDION --------------- */
